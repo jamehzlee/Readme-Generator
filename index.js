@@ -1,9 +1,8 @@
-// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-// TODO: Create an array of questions for user input
+
 const questions = ({link, repo, description, install, usage, contribution, test}) =>
-    `<h1><a href="${link}"></a>${repo}</h1>
+`<h1><a href="${link}"></a>${repo}</h1>
 
 ## Description
 ${description}
@@ -21,8 +20,8 @@ ${contribution}
 ${test}`;
 
 inquirer
-    .prompt(
-        {
+    .prompt([
+    {
         type: 'input',
         message: 'Add your deployment link:',
         name: 'link'
@@ -64,7 +63,7 @@ inquirer
         name: 'test'
 
     }
-    )
+    ])
     .then((answers) => {
         const data = questions(answers);
 
@@ -72,13 +71,3 @@ inquirer
             err ?  console.error(err) : console.log("README created!")
         )
     })
-
-function writeToFile(fileName, data) {
-    
-}
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
