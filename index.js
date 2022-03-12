@@ -2,6 +2,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
+// Prompts user in terminal for applicable info for README
 inquirer
     .prompt([
         {
@@ -37,8 +38,10 @@ inquirer
         }
         ])
         .then((data) => {
+            // Passes user data to function to reformat to README syntax
             data = generateMarkdown(data);
 
+            // Creates README in ./dist folder
             fs.writeFile('./dist/README.md', data, (err) =>
                 err ?  console.error(err) : console.log("README created!")
             )

@@ -1,3 +1,4 @@
+// Links license badge to add to README
 function renderLicenseBadge(license) {
   if (license === 'MIT') {
     return `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`;
@@ -16,6 +17,7 @@ function renderLicenseBadge(license) {
   }
 }
 
+// Adds license link to License section
 function renderLicenseLink(license) {
   if (license === 'MIT') {
     return `<a href='https://opensource.org/licenses/MIT'>${license} License</a>`
@@ -34,6 +36,7 @@ function renderLicenseLink(license) {
   }
 }
 
+// Adds License section to README
 function renderLicenseSection(license) {
   if (license === 'MIT' || 'Apache' || 'GNU GPL' || 'Mozilla') {
     return `
@@ -45,6 +48,7 @@ ${renderLicenseLink(license)}`;
   }
 }
 
+//Creates Table of Contents
 function renderTOC(license) {
   if (license === 'MIT' || 'Apache' || 'GNU GPL' || 'Mozilla') {
     return `<ul><li><a href="#install">Installation</a></li>
@@ -59,7 +63,8 @@ function renderTOC(license) {
 <li><a href="#test">Test</a></li></ul>`;
 }
 
-function usage(data) {
+// Adds user input video link to README
+function usageVideo(data) {
   if (data === '') {
     return '';
   }
@@ -68,6 +73,7 @@ function usage(data) {
   }   
 }
 
+// Check for contributors and outputs default if none
 function contributor(data) {
   if (data === '') {
     return 'There were no other contributors.';
@@ -77,6 +83,7 @@ function contributor(data) {
   }
 }
 
+// Formats data to README.md syntax
 function generateMarkdown(data) {
   return `<h1><a href="${data.link}">${data.repo}</a></h1>
 
@@ -95,7 +102,7 @@ To install dependencies use
 <h2 id="usage">Usage</h2>
 To start the Readme Generator use
 <pre>npm start</pre>
-${usage(data.usage)}
+${usageVideo(data.usage)}
 
 <h2 id="cont">Contributors</h2>
 ${contributor(data.contribution)}
