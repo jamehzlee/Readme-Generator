@@ -3,15 +3,14 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 <h2>Description</h2>
-Creates a quality README.md from user's input using prompts in the terminal.
+Creates a quality README.md from the user's input using prompts in the terminal. This readme was also created using this application.
 
 <h2>Table Of Contents</h2>
-<h2><a href="#install">Installation</a></h2>
-<h2><a href="#usage">Usage</a></h2>
-<h2><a href="#cont">Contributors</a></h2>
-<h2><a href="#test">Test</a></h2>
-<h2><a href="#license">License</a></h2>
-
+<ul><li><a href="#install" style="font-size:1.25em">Installation</a></li>
+<li><a href="#usage" style="font-size:1.25em">Usage</a></li>
+<li><a href="#cont" style="font-size:1.25em">Contributors</a></li>
+<li><a href="#test" style="font-size:1.25em">Test</a></li>
+<li><a href="#license" style="font-size:1.25em">License</a></li></ul>
 
 <h2 id="install">Installation</h2>
 To install dependencies use
