@@ -18,12 +18,33 @@ function renderLicenseBadge(license) {
 
 function renderLicenseSection(license) {
   if (license === 'MIT' ) {
-    return `## License
+    return `
+## License
 ${renderLicenseBadge(license)}`;
   }
   else {
     return '';
   }
+}
+
+function contributor(data) {
+  if (data === '') {
+    return 'There were no other contributors.';
+  }
+  else {
+    return data;
+  }
+}
+
+function tests(data) {
+  if (data === '') {
+    return;
+  }
+  else {
+    return `
+## Test
+${data}`;
+  }  
 }
 
 function generateMarkdown(data) {
@@ -39,11 +60,8 @@ ${data.install}
 ${data.usage}
 
 ## Contributors
-${data.contribution}
-
-## Tests
-${data.test}
-
+${contributor(data.contribution)}
+${tests(data.test)}
 ${renderLicenseSection(data.license)}`;
 }
 

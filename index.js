@@ -36,7 +36,7 @@ inquirer
         },
         {
             type: 'input',
-            message: 'Enter test instructions:',
+            message: 'Enter test walkthrough video link:',
             name: 'test'
         },
         {
