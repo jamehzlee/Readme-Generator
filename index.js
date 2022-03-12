@@ -21,23 +21,13 @@ inquirer
         },
         {
             type: 'input',
-            message: 'Enter installation instructions:',
-            name: 'install'
-        },
-        {
-            type: 'input',
-            message: 'Enter usage information:',
+            message: 'Enter usage walkthrough video link:',
             name: 'usage'
         },
         {
             type: 'input',
             message: 'Enter contributors(If none press enter):',
             name: 'contribution'
-        },
-        {
-            type: 'input',
-            message: 'Enter test walkthrough video link:',
-            name: 'test'
         },
         {
             type: 'list',

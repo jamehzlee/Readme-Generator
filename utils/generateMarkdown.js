@@ -45,6 +45,15 @@ ${renderLicenseLink(license)}`;
   }
 }
 
+function usage(data) {
+  if (data === '') {
+    return '';
+  }
+  else {
+    return `<a href="${data}">Walkthrough Video on Screencastify</a>`;
+  }   
+}
+
 function contributor(data) {
   if (data === '') {
     return 'There were no other contributors.';
@@ -52,17 +61,6 @@ function contributor(data) {
   else {
     return data;
   }
-}
-
-function tests(data) {
-  if (data === '') {
-    return;
-  }
-  else {
-    return `
-## Test
-${data}`;
-  }  
 }
 
 function generateMarkdown(data) {
@@ -74,14 +72,20 @@ ${renderLicenseBadge(data.license)}
 ${data.description}
 
 ## Installation
-${data.install}
+To install dependencies use
+<pre>npm install</pre>
 
 ## Usage
-${data.usage}
+To start the Readme Generator use
+<pre>npm start</pre>
+${usage(data.usage)}
 
 ## Contributors
 ${contributor(data.contribution)}
-${tests(data.test)}
+
+## Test
+To run a test use
+<pre>npm test</pre>
 ${renderLicenseSection(data.license)}`;
 }
 
