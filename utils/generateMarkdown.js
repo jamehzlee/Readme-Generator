@@ -47,16 +47,16 @@ ${renderLicenseLink(license)}`;
 
 function renderTOC(license) {
   if (license === 'MIT' || 'Apache' || 'GNU GPL' || 'Mozilla') {
-    return `<ul><li><a href="#install" style="font-size:1.25em">Installation</a></li>
-<li><a href="#usage" style="font-size:1.25em">Usage</a></li>
-<li><a href="#cont" style="font-size:1.25em">Contributors</a></li>
-<li><a href="#test" style="font-size:1.25em">Test</a></li>
-<li><a href="#license" style="font-size:1.25em">License</a></li></ul>`;
+    return `<ul><li><a href="#install">Installation</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#cont">Contributors</a></li>
+<li><a href="#test">Test</a></li>
+<li><a href="#license">License</a></li></ul>`;
   }
-  return `<ul><li><a href="#install" style="font-size:1.25em">Installation</a></li>
-<li><a href="#usage" style="font-size:1.25em">Usage</a></li>
-<li><a href="#cont" style="font-size:1.25em">Contributors</a></li>
-<li><a href="#test" style="font-size:1.25em">Test</a></li></ul>`;
+  return `<ul><li><a href="#install">Installation</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#cont">Contributors</a></li>
+<li><a href="#test">Test</a></li></ul>`;
 }
 
 function usage(data) {
