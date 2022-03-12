@@ -1,15 +1,33 @@
 function renderLicenseBadge(license) {
   if (license === 'MIT') {
-    return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
+    return `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`;
   }
   else if (license === 'Apache') {
-    return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache_2.0)`;
+    return `![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)`;
   }
   else if (license === 'GNU GPL') {
-    return `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://opensource.org/licenses/gpl-3.0)`;
+    return `![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)`;
   }
   else if (license === 'Mozilla') {
-    return `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`;
+    return `![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)`;
+  }
+  else {
+    return '';
+  }
+}
+
+function renderLicenseLink(license) {
+  if (license === 'MIT') {
+    return `<a href='https://opensource.org/licenses/MIT'>${license} License</a>`
+  }
+  else if (license === 'Apache') {
+    return `<a href='https://opensource.org/licenses/Apache_2.0'>${license} License</a>`;
+  }
+  else if (license === 'GNU GPL') {
+    return `<a href='https://opensource.org/licenses/gpl-3.0'>${license} License</a>`;
+  }
+  else if (license === 'Mozilla') {
+    return `<a href='https://opensource.org/licenses/MPL-2.0'>${license} License</a>`;
   }
   else {
     return '';
@@ -17,10 +35,10 @@ function renderLicenseBadge(license) {
 }
 
 function renderLicenseSection(license) {
-  if (license === 'MIT' ) {
+  if (license === 'MIT' || 'Apache' || 'GNU GPL' || 'Mozilla' ) {
     return `
 ## License
-${renderLicenseBadge(license)}`;
+${renderLicenseLink(license)}`;
   }
   else {
     return '';
@@ -48,7 +66,9 @@ ${data}`;
 }
 
 function generateMarkdown(data) {
-  return `<h1><a href="${data.link}"></a>${data.repo}</h1>
+  return `<h1><a href="${data.link}">${data.repo}</a></h1>
+
+${renderLicenseBadge(data.license)}
 
 ## Description
 ${data.description}
