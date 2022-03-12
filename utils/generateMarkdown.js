@@ -35,14 +35,30 @@ function renderLicenseLink(license) {
 }
 
 function renderLicenseSection(license) {
-  if (license === 'MIT' || 'Apache' || 'GNU GPL' || 'Mozilla' ) {
+  if (license === 'MIT' || 'Apache' || 'GNU GPL' || 'Mozilla') {
     return `
-## License
+<h2 id="license">License</h2>
 ${renderLicenseLink(license)}`;
   }
   else {
     return '';
   }
+}
+
+function renderTOC(license) {
+  if (license === 'MIT' || 'Apache' || 'GNU GPL' || 'Mozilla') {
+    return `<h2><a href="#install">Installation</a></h2>
+<h2><a href="#usage">Usage</a></h2>
+<h2><a href="#cont">Contributors</a></h2>
+<h2><a href="#test">Test</a></h2>
+<h2><a href="#license">License</a></h2>
+`;
+  }
+  return `<h2><a href="#install">Installation</a></h2>
+<h2><a href="#usage">Usage</a></h2>
+<h2><a href="#cont">Contributors</a></h2>
+<h2><a href="#test">Test</a></h2>
+`;
 }
 
 function usage(data) {
@@ -68,22 +84,25 @@ function generateMarkdown(data) {
 
 ${renderLicenseBadge(data.license)}
 
-## Description
+<h2>Description</h2>
 ${data.description}
 
-## Installation
+<h2>Table Of Contents</h2>
+${renderTOC(data.license)}
+
+<h2 id="install">Installation</h2>
 To install dependencies use
 <pre>npm install</pre>
 
-## Usage
+<h2 id="usage">Usage</h2>
 To start the Readme Generator use
 <pre>npm start</pre>
 ${usage(data.usage)}
 
-## Contributors
+<h2 id="cont">Contributors</h2>
 ${contributor(data.contribution)}
 
-## Test
+<h2 id="test">Test</h2>
 To run a test use
 <pre>npm test</pre>
 ${renderLicenseSection(data.license)}`;
