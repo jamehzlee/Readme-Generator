@@ -3,7 +3,8 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Description
-Creates a quality README.md from user's input using prompts in the terminal
+Creates a quality README.md from user's input using prompts in the terminal.
+This README.md was created with this application.
 
 ## Installation
 To install dependencies use
